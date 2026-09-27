@@ -1,0 +1,42 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Entorno virtual (obligatorio,AGENTS.md) ---
+.venv/
+venv/
+env/
+
+# --- Datos crudos: pueden contener carné de identidad y anuncios personales ---
+# AGENTS.md exige que data/raw/ sea inmutable, no necesariamente versionado.
+# Los datos limpios sí se versionan para poder reproducir el análisis.
+data/raw/*.jsonl
+data/raw/*.csv
+data/raw/*.txt
+!data/raw/.gitkeep
+
+# Los .gitkeep de los directorios de datos sí se versionan
+!data/**/.gitkeep
+
+# --- Configuración local y secretos ---
+.env
+config/config.local.yaml
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Excepciones de Excel por tamaño de hoja ---
+*.xls
+!*.xlsx
+
+# --- Sistema operativo / editores ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
